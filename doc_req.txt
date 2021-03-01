@@ -1,0 +1,4 @@
+//Qui scrivo i requisiti e mano a mano raffino il tutto
+//Questo file servirà per stilare eventualmente una documentazione
+
+Requisiti della base di dati:
