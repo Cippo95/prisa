@@ -2,3 +2,19 @@
 //Questo file servirà per stilare eventualmente una documentazione
 
 Requisiti della base di dati:
+La base di dati deve tenere traccia degli utenti (studenti e 
+docenti, dei corsi, dei progetti e degli allegati (note o file).
+
+Gli studenti hanno una matricola che li identifica univocamente,
+hanno un nome e un cognom. //ci possono essere altri dati
+Gli studenti seguono dei corsi. 
+Gli studenti eseguono dei progetti per i corsi che li richiedono.
+
+I docenti hanno una matricola che li identifica univocamente, 
+hanno un nome e un cognome.//ci possono essere altri dati
+I docenti insegnano 1 o più corsi.
+
+I corsi hanno un nome del corso che li identifica univocamente.
+I corsi possono richiedere un progetto.
+
+I progetti hanno un codice progetto, uno stato.
