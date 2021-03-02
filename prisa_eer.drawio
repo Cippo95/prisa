@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-02T15:24:46.980Z" agent="5.0 (Windows)" etag="6L9MSgmupl8WwC2F-_yU" version="14.4.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-03-02T15:27:06.991Z" agent="5.0 (Windows)" etag="C7kRG_d0bALn-js5YT4Z" version="14.4.3" type="github" pages="3">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="663" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -319,7 +319,7 @@
           <mxGeometry x="40" y="10" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Ia3W3VI0tTRK6rjwmEQ3-0" value="MATRICOLA_MITT" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="nW2UzHPsDUrRITbQaF3P-1">
-          <mxGeometry x="440" y="380" width="120" height="20" as="geometry" />
+          <mxGeometry x="320" y="380" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Ia3W3VI0tTRK6rjwmEQ3-1" value="&lt;div&gt;COGNOME&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="nW2UzHPsDUrRITbQaF3P-1">
           <mxGeometry x="320" y="60" width="120" height="20" as="geometry" />
@@ -335,9 +335,6 @@
         </mxCell>
         <mxCell id="3qStp2pRSJfiyf3uiGtb-0" value="STATO" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="nW2UzHPsDUrRITbQaF3P-1">
           <mxGeometry x="200" y="300" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="hvEXVNbQQO3aHQdetzPQ-1" value="COD_PR_M" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="nW2UzHPsDUrRITbQaF3P-1">
-          <mxGeometry x="320" y="380" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="hvEXVNbQQO3aHQdetzPQ-4" value="SEGUE" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="nW2UzHPsDUrRITbQaF3P-1">
           <mxGeometry x="80" y="440" width="50" height="20" as="geometry" />
