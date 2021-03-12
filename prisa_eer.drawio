@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-12T14:31:06.386Z" agent="5.0 (Windows)" etag="geV_Z5dr0cBq9gVDYUQs" version="14.4.7" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-12T14:31:48.016Z" agent="5.0 (Windows)" etag="_AphJ59k2ichU3DCV2eh" version="14.4.7" type="github" pages="5">
   <diagram id="uz-bql21G0ZkBbgc17I7" name="SCHEMA EER">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -920,8 +920,8 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="381" y="420" />
-              <mxPoint x="150" y="420" />
-              <mxPoint x="150" y="330" />
+              <mxPoint x="160" y="420" />
+              <mxPoint x="160" y="330" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -932,8 +932,8 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="390" y="600" />
-              <mxPoint x="150" y="600" />
-              <mxPoint x="150" y="510" />
+              <mxPoint x="160" y="600" />
+              <mxPoint x="160" y="510" />
             </Array>
           </mxGeometry>
         </mxCell>
