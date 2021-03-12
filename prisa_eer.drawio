@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-12T17:45:24.331Z" agent="5.0 (Windows)" etag="gnvO_hen5E_klTlB0m04" version="14.4.7" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-12T17:47:04.671Z" agent="5.0 (Windows)" etag="9Yq-p3bCJHOrp5Fk3P-_" version="14.4.7" type="github" pages="5">
   <diagram id="uz-bql21G0ZkBbgc17I7" name="SCHEMA EER">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1021,6 +1021,12 @@
       <root>
         <mxCell id="aU3qwrOn2Yha6p2gdwzz-0" />
         <mxCell id="aU3qwrOn2Yha6p2gdwzz-1" parent="aU3qwrOn2Yha6p2gdwzz-0" />
+        <mxCell id="tJe2-cxzGNf51HmhKK35-46" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+          <mxGeometry x="40" y="70" width="760" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="tJe2-cxzGNf51HmhKK35-45" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+          <mxGeometry x="40" y="690" width="780" height="230" as="geometry" />
+        </mxCell>
         <mxCell id="tJe2-cxzGNf51HmhKK35-7" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="aU3qwrOn2Yha6p2gdwzz-1" source="tJe2-cxzGNf51HmhKK35-0" target="tJe2-cxzGNf51HmhKK35-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -1161,6 +1167,12 @@
         </mxCell>
         <mxCell id="tJe2-cxzGNf51HmhKK35-43" value="&lt;div&gt;UTENTE:&lt;/div&gt;&lt;div&gt;MESSAGGIO&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
           <mxGeometry x="535" y="750" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tJe2-cxzGNf51HmhKK35-44" value="CICLO STATI DEL PROGETTO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+          <mxGeometry x="70" y="700" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tJe2-cxzGNf51HmhKK35-47" value="FUNZIONAMENTO APPLICAZIONE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+          <mxGeometry x="120" y="90" width="40" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
