@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-12T14:31:48.016Z" agent="5.0 (Windows)" etag="_AphJ59k2ichU3DCV2eh" version="14.4.7" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-12T14:40:32.797Z" agent="5.0 (Windows)" etag="OjCPtGWU2JrFzXXc2caE" version="14.4.7" type="github" pages="5">
   <diagram id="uz-bql21G0ZkBbgc17I7" name="SCHEMA EER">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -792,7 +792,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="SCHEMA RELAZIONALE V2" id="MZw9mcAXWoQgqGe-_8PZ">
-    <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="607" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="05BvGZ8dcpormVHHbP-I-0" />
         <mxCell id="05BvGZ8dcpormVHHbP-I-1" parent="05BvGZ8dcpormVHHbP-I-0" />
@@ -1007,10 +1007,10 @@
         <mxCell id="05BvGZ8dcpormVHHbP-I-66" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
           <mxGeometry x="640" y="40" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="kfin361emQTMEfPLE4KT-0" value="TESTO" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
+        <mxCell id="kfin361emQTMEfPLE4KT-0" value="NOTA" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
           <mxGeometry x="560" y="560" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="kfin361emQTMEfPLE4KT-1" value="DATO" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
+        <mxCell id="kfin361emQTMEfPLE4KT-1" value="FILE" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
           <mxGeometry x="680" y="560" width="120" height="20" as="geometry" />
         </mxCell>
       </root>
