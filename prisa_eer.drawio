@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-12T14:28:00.693Z" agent="5.0 (Windows)" etag="izzEdz0ejADqS2aq-rsV" version="14.4.7" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-12T14:28:38.537Z" agent="5.0 (Windows)" etag="foQG5hMBIxWR7MjAAtdz" version="14.4.7" type="github" pages="5">
   <diagram id="uz-bql21G0ZkBbgc17I7" name="SCHEMA EER">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -792,7 +792,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="SCHEMA RELAZIONALE V2" id="MZw9mcAXWoQgqGe-_8PZ">
-    <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="05BvGZ8dcpormVHHbP-I-0" />
         <mxCell id="05BvGZ8dcpormVHHbP-I-1" parent="05BvGZ8dcpormVHHbP-I-0" />
@@ -916,6 +916,15 @@
         <mxCell id="05BvGZ8dcpormVHHbP-I-32" value="&lt;u&gt;NOM_COR&lt;/u&gt;" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
           <mxGeometry x="320.48" y="260" width="120" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="BUOIuf437bLVim7vrcPZ-0" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="05BvGZ8dcpormVHHbP-I-1" source="05BvGZ8dcpormVHHbP-I-34" target="05BvGZ8dcpormVHHbP-I-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="381" y="420" />
+              <mxPoint x="150" y="420" />
+              <mxPoint x="150" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="05BvGZ8dcpormVHHbP-I-34" value="&lt;div&gt;&lt;u&gt;NOM_COR&lt;/u&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="05BvGZ8dcpormVHHbP-I-1">
           <mxGeometry x="320.48" y="440" width="120" height="20" as="geometry" />
         </mxCell>
@@ -972,8 +981,8 @@
         <mxCell id="05BvGZ8dcpormVHHbP-I-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="05BvGZ8dcpormVHHbP-I-1" source="05BvGZ8dcpormVHHbP-I-62" target="05BvGZ8dcpormVHHbP-I-4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="150" y="390" />
-              <mxPoint x="150" y="330" />
+              <mxPoint x="170" y="390" />
+              <mxPoint x="170" y="330" />
             </Array>
           </mxGeometry>
         </mxCell>
