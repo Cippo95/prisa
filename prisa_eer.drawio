@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-14T19:34:18.704Z" agent="5.0 (Windows)" etag="0N4hGaUhgwGALjeLNvKw" version="14.4.8" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-14T19:34:39.634Z" agent="5.0 (Windows)" etag="8NiVITR44vIeVYxkan8q" version="14.4.8" type="github" pages="5">
   <diagram id="uz-bql21G0ZkBbgc17I7" name="SCHEMA EER">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1190,8 +1190,8 @@
         <mxCell id="tJe2-cxzGNf51HmhKK35-43" value="&lt;div&gt;UTENTE:&lt;/div&gt;&lt;div&gt;MESSAGGIO&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
           <mxGeometry x="520" y="850" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="tJe2-cxzGNf51HmhKK35-44" value="CICLO STATI DEL PROGETTO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
-          <mxGeometry x="55" y="800" width="180" height="20" as="geometry" />
+        <mxCell id="tJe2-cxzGNf51HmhKK35-44" value="&lt;div&gt;STATI DEL PROGETTO&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
+          <mxGeometry x="75" y="800" width="140" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tJe2-cxzGNf51HmhKK35-47" value="PRISA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
           <mxGeometry x="90" y="50" width="150" height="20" as="geometry" />
