@@ -21,7 +21,7 @@ Per trovare i corsi che lo studente segue:
 > FROM segue
 > WHERE mat_stu = <numero_matricola>;
 
-Selezionato un corso verrà creato un progetto legato a tale corso andando ad aggiornare le tabelle progetto, sviluppa e controlla.
+Selezionato un corso verrà creato un progetto legato a tale corso (andando ad aggiornare le tabelle progetto, sviluppa e controlla), questo corrisponde all'azione "AGGIUNTA CORSO":
 
 > INSERT INTO progetto(CODICE_PROGETTO,STATO)  
 > VALUES (<codice_progetto>,"CREATO");  
@@ -32,7 +32,7 @@ Selezionato un corso verrà creato un progetto legato a tale corso andando ad ag
 > INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
 > VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>);  
 
-Nel caso di progetti multi-corso allora si possono aggiungere anche i rimanenti corsi uno alla volta, mantenendo il codice di progetto e matricola: 
+Nel caso di progetti multi-corso allora si possono aggiungere anche i rimanenti corsi uno alla volta, mantenendo il codice di progetto e matricola, questo corrisponde all'azione "AGGIUNTA CORSI": 
 
 > INSERT INTO controlla(NOM_COR, COD_PRO)  
 > VALUES ("<nome_corso>", <codice_progetto>);  
@@ -40,12 +40,12 @@ Nel caso di progetti multi-corso allora si possono aggiungere anche i rimanenti 
 > INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
 > VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>); 
 
-Nel caso di progetti multi-studente allora si possono aggiungere anche i rimanenti studenti, tenendo in cosiderazione il loro numero di matricola e i corsi a cui è legato il progetto: 
+Nel caso di progetti multi-studente allora si possono aggiungere anche i rimanenti studenti, tenendo in cosiderazione il loro numero di matricola e i corsi a cui è legato il progetto, questo corrisponde all'azione "AGGIUNTA STUDENTI": 
 
 > INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
 > VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>); 
 
-(Qui in realtà credo che sarebbe meglio invitare gli studenti con cui si collabora, aggiungerli direttamente non so se sia una buona pratica.)
+(Qui in realtà credo che sarebbe meglio invitare gli studenti con cui si collabora o forse dovrebbero essere loro ad aggiungersi, aggiungerli direttamente non so se sia una buona pratica, devo ragionarci su.)
 
 Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che si può tornare indietro alla pagina dei progetti.
 
@@ -62,19 +62,19 @@ Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che 
 
 **LOGIN DI UN DOCENTE**
 
-1. Avviene l'azione "LOGIN DOCENTE" che porta allo stato "MOSTRA_CORSI_D", il docente vedrà i corsi che insegna:
+1. Se si tratta di un docente avviene l'azione "LOGIN DOCENTE" che porta allo stato "MOSTRA_CORSI_D", il docente vedrà i corsi che insegna:
 
 > SELECT nom_cor  
 > FROM insegna  
 > WHERE mat_doc = <matricola_docente>;  
 
-2. Da qui il docente può selezionare un corso e vedere i progetti legati ad esso, questo corrisponde a fare l'azione "SELEZIONA UNO" e spostarsi quindi nello stato "MOSTRA_PROGETTI":
+2. Da qui il docente può selezionare un corso e vedere i progetti legati ad esso, questo corrisponde a fare l'azione "SELEZIONA CORSO" e spostarsi quindi nello stato "MOSTRA_PROGETTI":
 
 > SELECT cod_pro  
 > FROM controlla  
 > WHERE nom_cor = "<nome_corso>";  
 
-3. Ora selezionando uno dei progetti apro una pagina dove ho i vari allegati, questo corrisponde a fare l'azione "SELEZIONA UN0" e passare allo stato "MOSTRA_ALLEGATI".
+3. Ora selezionando uno dei progetti si apre la pagina degli allegati, questo corrisponde a fare l'azione "SELEZIONA PR." e passare allo stato "MOSTRA_ALLEGATI".
 
 > SELECT numero,messaggio  
 > FROM allegato  
@@ -84,6 +84,12 @@ Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che 
 
 > INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
 > VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio>);
+
+5. Il docente può inoltre cambiare lo stato al processo ad accettato o concluso, azione "CAMBIA STATO PROGETTO".
+
+> UPDATE prisa_v2.progetto   
+> SET STATO = "<stato>"   
+> WHERE (CODICE_PROGETTO = <codice_progetto>);  
 
 **IN GENERALE**
 
