@@ -1,6 +1,8 @@
 # QUERY DELLA APPLICAZIONE
 
-**Consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE".**
+**Consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE".**  
+
+**NOTA: per qualche motivo mettere parole singole dentro a parantesi quadre le fa scomparire, per questo aggiungo un underscore alla fine di certe parole**  
 
 **PAGINA LOGIN**
 Corrisponde allo stato "LOGIN". 
