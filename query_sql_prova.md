@@ -2,9 +2,9 @@
 
 **Consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE".**  
 
-**NOTA: per qualche motivo mettere parole singole dentro a parantesi quadre le fa scomparire, per questo aggiungo un underscore alla fine di certe parole**  
+**NOTA: per qualche motivo mettere parole singole dentro a parantesi quadre le fa scomparire, per questo aggiungo un underscore alla fine di certe parole.**  
 
-**PAGINA LOGIN**
+**PAGINA LOGIN**  
 Corrisponde allo stato "LOGIN". 
 Inserendo le credenziali in questa pagina a seconda dell'utente si apre una pagina dedicata allo studente o al docente. 
 
