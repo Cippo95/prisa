@@ -11,7 +11,7 @@
 
 > SELECT cod_pro  
 > FROM sviluppa  
-> WHERE mat_stu = "<matricola_studente>";  
+> WHERE mat_stu = <matricola_studente>;  
 
 2. Da questa pagina lo studente può anche aggiungere progetti azione che porta ad aggiornare le tabelle progetto, sviluppa e controlla.
 
@@ -28,12 +28,12 @@
 
 > SELECT numero,messaggio  
 > FROM allegato  
-> WHERE cod_pro="<codice_progetto>";  
+> WHERE cod_pro = <codice_progetto>;  
 
 4. Qui posso aggiungere un allegato testuale e/o di tipo file.  
 
 > INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
-> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio>);  
+> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <mess>);  
 
 **LOGIN DI UN DOCENTE**
 
@@ -41,24 +41,24 @@
 
 > SELECT nom_cor  
 > FROM insegna  
-> WHERE mat_doc = "<matricola_docente>";  
+> WHERE mat_doc = <matricola_docente>;  
 
 2. Può selezionare un corso e vedere i progetti legati ad esso:
 
 > SELECT cod_pro  
 > FROM controlla  
-> WHERE nom_cor = "<nom_corso>";  
+> WHERE nom_cor = "<nome_corso>";  
 
 3. Ora cliccando uno dei progetti apro una pagina dove ho i vari allegati.
 
 > SELECT numero,messaggio  
 > FROM allegato  
-> WHERE cod_pro="<codice_progetto>";  
+> WHERE cod_pro = <codice_progetto>;  
 
 4. Qui può aggiungere allegati al progetto.
 
 > INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
-> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio>);
+> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <mess>);
 
 **IN GENERALE**
 
