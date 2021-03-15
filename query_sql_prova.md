@@ -17,9 +17,9 @@ Inserendo le credenziali in questa pagina a seconda dell'utente si apre una pagi
 2. Da questa pagina lo studente può aggiungere progetti per i corsi che segue, corrisponde alla azione "AGGIUNGI PROGETTO", che porta in una nuova pagina "SELEZIONE_CORSO" dove bisogna indicare il corso per il quale si vuole fare il progetto.
 
 Per trovare i corsi che lo studente segue:
-> SELECT nom_cor
-> FROM segue
-> WHERE mat_stu = <numero_matricola>;
+> SELECT nom_cor  
+> FROM segue  
+> WHERE mat_stu = <numero_matricola>;  
 
 Selezionato un corso verrà creato un progetto legato a tale corso (andando ad aggiornare le tabelle progetto, sviluppa e controlla), questo corrisponde all'azione "AGGIUNTA CORSO":
 
