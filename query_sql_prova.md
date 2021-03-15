@@ -57,8 +57,8 @@ Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che 
 
 4. Qui posso aggiungere un allegato testuale e/o di tipo file, corrisponde all'azione "SCRIVI ALLEGATO":  
 
-> INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
-> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio>);  
+> INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, messaggio_)   
+> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio_>);  
 
 **LOGIN DI UN DOCENTE**
 
@@ -76,19 +76,19 @@ Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che 
 
 3. Ora selezionando uno dei progetti si apre la pagina degli allegati, questo corrisponde a fare l'azione "SELEZIONA PR." e passare allo stato "MOSTRA_ALLEGATI".
 
-> SELECT numero,messaggio  
+> SELECT numero,messaggio    
 > FROM allegato  
 > WHERE cod_pro = <codice_progetto>;  
 
 4. Da qui il docente può aggiungere allegati al progetto che corrisponde alla azione "SCRIVI ALLEGATO".
 
-> INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
-> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio>);
+> INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, messaggio_)   
+> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio_>);
 
 5. Il docente può inoltre cambiare lo stato al processo ad accettato o concluso, azione "CAMBIA STATO PROGETTO".
 
 > UPDATE prisa_v2.progetto   
-> SET STATO = "<stato>"   
+> SET STATO = "<stato_>"   
 > WHERE (CODICE_PROGETTO = <codice_progetto>);  
 
 **IN GENERALE**
