@@ -4,26 +4,50 @@
 
 **PAGINA LOGIN**
 Corrisponde allo stato "LOGIN". 
-Intergendo con questa pagina a seconda dell'utente si apre una pagina dedicata allo studente o al docente. 
+Inserendo le credenziali in questa pagina a seconda dell'utente si apre una pagina dedicata allo studente o al docente. 
 
 **LOGIN DI UNO STUDENTE:**
 
-1. Avviene l'azione "LOGIN STUDENTE" che porta quindi nello stato "MOSTRA_PROGETTI_S" che mostra i progetti dello studente:
+1. Se si tratta di uno studente, avviene l'azione "LOGIN STUDENTE" che porta quindi nello stato "MOSTRA_PROGETTI_S" che mostra i progetti dello studente:
 
 > SELECT cod_pro  
 > FROM sviluppa  
 > WHERE mat_stu = <matricola_studente>;  
 
-2. Da questa pagina lo studente può aggiungere progetti, corrisponde alla azione "AGGIUNGI PROGETTO", che porta ad aggiornare le tabelle progetto, sviluppa e controlla.
+2. Da questa pagina lo studente può aggiungere progetti per i corsi che segue, corrisponde alla azione "AGGIUNGI PROGETTO", che porta in una nuova pagina "SELEZIONE_CORSO" dove bisogna indicare il corso per il quale si vuole fare il progetto.
+
+Per trovare i corsi che lo studente segue:
+> SELECT nom_cor
+> FROM segue
+> WHERE mat_stu = <numero_matricola>;
+
+Selezionato un corso verrà creato un progetto legato a tale corso andando ad aggiornare le tabelle progetto, sviluppa e controlla.
 
 > INSERT INTO progetto(CODICE_PROGETTO,STATO)  
-> VALUES (<numero_progetto>,"CREATO");  
+> VALUES (<codice_progetto>,"CREATO");  
 >   
 > INSERT INTO controlla(NOM_COR, COD_PRO)  
-> VALUES ("<nome_corso>", <numero_progetto>);  
+> VALUES ("<nome_corso>", <codice_progetto>);  
 >   
 > INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
-> VALUES (<numero_matricola>, "<nome_corso>", <numero_progetto>);  
+> VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>);  
+
+Nel caso di progetti multi-corso allora si possono aggiungere anche i rimanenti corsi uno alla volta, mantenendo il codice di progetto e matricola: 
+
+> INSERT INTO controlla(NOM_COR, COD_PRO)  
+> VALUES ("<nome_corso>", <codice_progetto>);  
+>   
+> INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
+> VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>); 
+
+Nel caso di progetti multi-studente allora si possono aggiungere anche i rimanenti studenti, tenendo in cosiderazione il loro numero di matricola e i corsi a cui è legato il progetto: 
+
+> INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
+> VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>); 
+
+(Qui in realtà credo che sarebbe meglio invitare gli studenti con cui si collabora, aggiungerli direttamente non so se sia una buona pratica.)
+
+Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che si può tornare indietro alla pagina dei progetti.
 
 3. Cliccando uno dei progetti già esistenti apro una pagina dove ho i vari allegati, questo corrisponde alla azione "SELEZIONA UNO" passando allo stato "MOSTRA_ALLEGATI":
 
