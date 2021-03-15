@@ -2,9 +2,10 @@
 
 **Consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione.**
 
-LOGIN: a seconda dell'utente si apre una pagina dedicata allo studente o al docente.
+**PAGINA LOGIN**
+- A seconda dell'utente si apre una pagina dedicata allo studente o al docente.
 
-**LOGIN STUDENTE:**
+**LOGIN DI UNO STUDENTE:**
 
 1. Egli come prima cosa potrà vedere i suoi progetti:
 
@@ -35,7 +36,7 @@ vari allegati:
 > INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
 > VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <messaggio>);  
 
-**LOGIN DOCENTE**
+**LOGIN DI UN DOCENTE**
 
 1. Egli come prima cosa vedrà i corsi che insegna:
 
