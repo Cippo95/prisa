@@ -1,4 +1,4 @@
-#Query della applicazione
+# QUERY DELLA APPLICAZIONE
 
 Consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione.
 
