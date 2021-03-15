@@ -8,9 +8,9 @@ Parlando dello studente:
 
 Esso come prima cosa potrà vedere i suoi progetti:
 
-select cod_pro
-from sviluppa
-where mat_stu = "<matricola_studente>";
+> select cod_pro 
+> from sviluppa 
+> where mat_stu = "<matricola_studente>"; 
 
 Se non ho progetti posso aggiungere un progetto alla volta, 
 azione che porta ad aggiornare le tabelle progetto, sviluppa e controlla.
