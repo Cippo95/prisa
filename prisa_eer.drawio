@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-15T20:28:38.795Z" agent="5.0 (Windows)" etag="G18qY-x4fz-jHK32AeZ2" version="14.4.8" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-03-15T20:43:21.432Z" agent="5.0 (Windows)" etag="u7qF5TCcCWP9QfjJhpq5" version="14.4.8" type="github" pages="5">
   <diagram name="SCHEMA_EER" id="66IZYz81pUA2FuGHuRgb">
     <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -453,7 +453,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="i705wN5nimbzW39bx-Y-" name="FSM_FUNZIONAMENTO">
-    <mxGraphModel dx="460" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="400" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="aU3qwrOn2Yha6p2gdwzz-0" />
         <mxCell id="aU3qwrOn2Yha6p2gdwzz-1" parent="aU3qwrOn2Yha6p2gdwzz-0" />
@@ -556,8 +556,8 @@
         <mxCell id="tJe2-cxzGNf51HmhKK35-18" value="&lt;div&gt;LOGIN DOCENTE&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;rotation=-90;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
           <mxGeometry x="55" y="330" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="tJe2-cxzGNf51HmhKK35-20" value="SELEZIONA UNO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
-          <mxGeometry x="160" y="550" width="110" height="20" as="geometry" />
+        <mxCell id="tJe2-cxzGNf51HmhKK35-20" value="SELEZIONA CORSO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
+          <mxGeometry x="160" y="550" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tJe2-cxzGNf51HmhKK35-32" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" parent="aU3qwrOn2Yha6p2gdwzz-1" source="tJe2-cxzGNf51HmhKK35-26" target="tJe2-cxzGNf51HmhKK35-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -620,7 +620,7 @@
         <mxCell id="sLJyrMq18Ptt2hgqR1nB-2" value="WORKFLOW STUDENTE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
           <mxGeometry x="510.08" y="50" width="170" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="sLJyrMq18Ptt2hgqR1nB-3" value="SELEZIONA UNO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
+        <mxCell id="sLJyrMq18Ptt2hgqR1nB-3" value="SELEZIONA PR." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
           <mxGeometry x="360" y="550" width="110" height="20" as="geometry" />
         </mxCell>
         <mxCell id="sLJyrMq18Ptt2hgqR1nB-5" value="&lt;div&gt;HOME&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="aU3qwrOn2Yha6p2gdwzz-1" vertex="1">
@@ -685,8 +685,31 @@
         <mxCell id="EZ--3VFe76LoS2kxVd23-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;curved=1;" edge="1" parent="aU3qwrOn2Yha6p2gdwzz-1" source="EZ--3VFe76LoS2kxVd23-0" target="EZ--3VFe76LoS2kxVd23-0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="EZ--3VFe76LoS2kxVd23-5" value="&lt;div&gt;AGGIUNTA CORSI/&lt;/div&gt;&lt;div&gt;STUDENTI&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+        <mxCell id="EZ--3VFe76LoS2kxVd23-5" value="AGGIUNTA CORSO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
           <mxGeometry x="640.08" y="320" width="119.92" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZ--3VFe76LoS2kxVd23-7" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;endArrow=none;endFill=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="aU3qwrOn2Yha6p2gdwzz-1" source="EZ--3VFe76LoS2kxVd23-0" target="EZ--3VFe76LoS2kxVd23-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="358" />
+              <mxPoint x="620" y="390" />
+              <mxPoint x="590" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZ--3VFe76LoS2kxVd23-8" value="AGGIUNTA CORSI" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+          <mxGeometry x="630" y="360" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="EZ--3VFe76LoS2kxVd23-9" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="aU3qwrOn2Yha6p2gdwzz-1" source="EZ--3VFe76LoS2kxVd23-0" target="EZ--3VFe76LoS2kxVd23-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="390" />
+              <mxPoint x="547" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EZ--3VFe76LoS2kxVd23-10" value="AGGIUNTA STUDENTI" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="aU3qwrOn2Yha6p2gdwzz-1">
+          <mxGeometry x="410" y="360" width="130" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
