@@ -8,8 +8,10 @@ Parlando dello studente:
 
 Esso come prima cosa potrà vedere i suoi progetti:
 
-> select cod_pro 
-> from sviluppa 
+> select cod_pro
+
+> from sviluppa
+ 
 > where mat_stu = "<matricola_studente>"; 
 
 Se non ho progetti posso aggiungere un progetto alla volta, 
