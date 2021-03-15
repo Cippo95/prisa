@@ -40,6 +40,12 @@ Per quanto riguarda progetti multi-corso, multi-utente:
 
 - A livello di database non ci sono problemi con progetti multi-corso, multi-studente, di fatto un progetto può essere legato a più corsi e studenti, devo però ragionare su come gestire a livello applicazione questa evenienza al meglio.
 
+Per quanto riguarda i corsi:
+
+- Devo controllare se necessitano di progetto o meno?
+
+- Il nome forse non è buono per identificarli, per esempio ho il caso in cui il corso sia tenuto da docenti differenti con modalità di esame con o senza progetti.
+
 
 
 
