@@ -33,7 +33,8 @@
 4. Qui posso aggiungere un allegato testuale e/o di tipo file.  
 
 > INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
-> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <mess>);  
+> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>,  
+> <messaggio>);  
 
 **LOGIN DI UN DOCENTE**
 
@@ -58,7 +59,8 @@
 4. Qui può aggiungere allegati al progetto.
 
 > INSERT INTO prisa_v2.allegato (COD_PRO, NUMERO, MAT_MIT, MESSAGGIO)   
-> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>, <mess>);
+> VALUES (<codice_progetto>, <numero_allegato>, <numero_matricola>,  
+> <messaggio>);
 
 **IN GENERALE**
 
