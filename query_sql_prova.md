@@ -1,7 +1,7 @@
 # QUERY DELLA APPLICAZIONE
 
-**Una idea sulle varie query della applicazione, consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE". Ovviamente è un work in progress.**  
-**NOTA: per qualche motivo mettere parole singole dentro a parantesi quadre le fa scomparire, per questo aggiungo un underscore alla fine di certe parole.**  
+**Una idea sulle varie query della applicazione, consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE". Si può usare "prisa_v2.sql" per testare le query, ovviamente è tutto un work in progress, ci sono pochi dati all'interno e il database è stato creato solo per vedere che il tutto funzionasse.**  
+**NOTA: per qualche motivo nei file .md su github mettere parole singole dentro a parantesi quadre le fa scomparire, per questo aggiungo un underscore alla fine di certe parole.**  
 
 **PAGINA LOGIN**  
 Corrisponde allo stato "LOGIN". 
@@ -45,8 +45,6 @@ Nel caso di progetti multi-studente allora si possono aggiungere anche i rimanen
 
 > INSERT INTO sviluppa(MAT_STU, NOM_COR, COD_PRO)  
 > VALUES (<numero_matricola>, "<nome_corso>", <codice_progetto>); 
-
-(Qui in realtà credo che sarebbe meglio invitare gli studenti con cui si collabora o forse dovrebbero essere loro ad aggiungersi, aggiungerli direttamente non so se sia una buona pratica, devo ragionarci su.)
 
 Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che si può tornare indietro alla pagina dei progetti.
 
@@ -96,10 +94,7 @@ Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che 
 
 - Da ogni stato diverso dal login si può effettuare il logout.  
 - Negli altri stati/pagine si può andare indietro tramite l'azione "INDIETRO" o in caso alla prima pagina con l'azione "HOME".  
-- Ci saranno query per aggiornare UTENTE, STUDENTE, DOCENTE, CORSO, SEGUE, INSEGNA legate al sistema universitario.  
-- Gli studenti aggiungendo progetti aggiornano PROGETTO, CONTROLLA, SVILUPPA.  
-- Gli utenti scrivendo allegati aggiornano ALLEGATO.   
-- I docenti possono modificare lo stato di progetto per accettare i requisiti, concludere il progetto.  
+- Ci saranno query per aggiornare UTENTE, STUDENTE, DOCENTE, CORSO, SEGUE, INSEGNA legate al sistema universitario.   
 
 
 
