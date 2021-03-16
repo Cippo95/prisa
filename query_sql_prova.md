@@ -1,7 +1,6 @@
 # QUERY DELLA APPLICAZIONE
 
-**Consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE".**  
-
+**Una idea sulle varie query della applicazione, consiglio di leggere la descrizione in accoppiata con lo statechart della applicazione "PRISA:PAGINE". Ovviamente è un work in progress.**  
 **NOTA: per qualche motivo mettere parole singole dentro a parantesi quadre le fa scomparire, per questo aggiungo un underscore alla fine di certe parole.**  
 
 **PAGINA LOGIN**  
@@ -93,7 +92,7 @@ Terminate le modifiche si riceve un risultato positivo o negativo e dopo di che 
 > SET STATO = "<stato_>"   
 > WHERE (CODICE_PROGETTO = <codice_progetto>);  
 
-**IN GENERALE**
+**Ulteriori informazioni**
 
 - Da ogni stato diverso dal login si può effettuare il logout.  
 - Negli altri stati/pagine si può andare indietro tramite l'azione "INDIETRO" o in caso alla prima pagina con l'azione "HOME".  

@@ -26,25 +26,21 @@ La base di dati deve tenere traccia degli utenti (studenti e docenti), dei corsi
 
 - Gli allegati sono contenuti all'interno dei progetti, essi contengono messaggi, file binari, o entrambi, creati dagli utenti. Ad esempio un utente può scrivere un messaggio e condividere dei file di documentazione o sorgenti del progetto. Gli allegati all'interno del progetto si distinguono per il loro numero d'ordine.
 
-### NOTE SUL FUNZIONAMENTO E QUESTIONI APERTE
+### MODELLI ARCHITETTURALI
 
-Per quanto riguarda gli stati di un progetto:
+Si possono visionare gli attuali modelli in diversi pdf: 
 
-- Il progetto va in stato di "specifica" (dei requisiti) appena l'utente propone o richiede il progetto attraverso un messaggio.
+- Schema eer della base di dati in "prisa_eer-SCHEMA_EER.pdf"  
 
-- Lo stato del progetto diventa "accettato" dopo che il prof convalida i requisiti.
+- Schema relazionale in "prisa_eer-SCHEMA_RELAZIONALE.pdf"  
 
-- Lo stato del progetto è "concluso" una volta che lo studente ha consegnato il necessario, cioè documentazione, sorgenti del software ed è stato valutato il suo operato.
+- Modello a statechart del funzionamento della applicazione e modello a fsm del passaggio di stato dei progetti in "prisa_eer-MODELLO_SC_FSM.pdf". 
 
-Per quanto riguarda progetti multi-corso, multi-utente:
+Si possono leggere le possibili query della applicazione in "query_sql_prova.md".  
 
-- A livello di database non ci sono problemi con progetti multi-corso, multi-studente, di fatto un progetto può essere legato a più corsi e studenti, devo però ragionare su come gestire a livello applicazione questa evenienza al meglio.
+### DUBBI ATTUALI
 
-Per quanto riguarda i corsi:
-
-- Devo controllare se necessitano di progetto o meno?
-
-- Il nome forse non è buono per identificarli, per esempio ho il caso in cui il corso sia tenuto da docenti differenti con modalità di esame con o senza progetti.
+- Per leggere i dubbi attuali guardare "dubbi_attuali.md".
 
 
 
