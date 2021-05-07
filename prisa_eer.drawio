@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-07T14:32:23.204Z" agent="5.0 (X11)" etag="qz2LYXALmAvoq_ooRAQT" version="14.6.11" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-05-07T14:32:43.032Z" agent="5.0 (X11)" etag="zD3WQfqkbmhPv5Z2xGXT" version="14.6.11" type="github" pages="5">
   <diagram name="SCHEMA_EER" id="66IZYz81pUA2FuGHuRgb">
-    <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="sZDU4HWieTK7Ssa5qvWq-0" />
         <mxCell id="sZDU4HWieTK7Ssa5qvWq-1" parent="sZDU4HWieTK7Ssa5qvWq-0" />
@@ -235,7 +235,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="SCHEMA_RELAZIONALE" id="MZw9mcAXWoQgqGe-_8PZ">
-    <mxGraphModel dx="2370" dy="1340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="05BvGZ8dcpormVHHbP-I-0" />
         <mxCell id="05BvGZ8dcpormVHHbP-I-1" parent="05BvGZ8dcpormVHHbP-I-0" />
