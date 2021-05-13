@@ -3,4 +3,4 @@
 Il mio progetto di ingegneria del software avanzata consiste
 in un software gestionale per i progetti universitari.
 
-Leggere "documento_requisiti.md" per saperne di più.
+Uso questo repository per la documentazione da aggiungere...
