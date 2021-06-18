@@ -3,7 +3,7 @@
 ---
 
 - [Premessa](#section-1)
-- [Requisiti iniziali della applicazione](#section-2)
+- [Requisiti della applicazione](#section-2)
 - [Struttura iniziale della base di dati](#section-3)
 - [Parliamo dell'implementazione](#section-4)
 - [Schemi architetturali](#section-5)
@@ -16,7 +16,7 @@
 ---
 
 <a name="section-2"></a>
-## REQUISITI INIZIALI DELLA APPLICAZIONE
+## REQUISITI DELLA APPLICAZIONE
 
 ### Requisiti iniziali
 
