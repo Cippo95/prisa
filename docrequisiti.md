@@ -100,11 +100,12 @@ Vi indico le cartelle dove trovate il succo del mio lavoro:
 
     - Quindi per integrare davvero la app con i servizi dell'università (quindi usare l'SSO, Single Sign On) bisognerebbe contattare gli amministratori dell'IDP (Identity Provider) dell'università per scambiare dei dati di configurazione. Ho usato il pacchetto piuttosto che seguire la documentazione di SAML poiché avevo difficoltà nel seguirla (se non fosse così difficile probabilmente non ci sarebbe questo pacchetto).
 
-### Il database
+### Il database, la sua evoluzione e scelte tecnologiche
 
-**_Questa sezione potrebbe essere particolarmente scritta male poiché ho scritto le varie parti in tempi differenti durante la progettazione, mi scuso in anticipo._**
+**_Questa sezione potrebbe essere difficile da comprendere, ho scritto le varie parti in tempi differenti durante la progettazione, di fatto è un misto tra scelte di modellazione del database e scelte tecnologiche dettate da come funziona Laravel, mi scuso in anticipo della confusione._**
 
-Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella costruzione del database:
+Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella costruzione del database:  
+
 - Sviluppa non è più una relazione ternaria (N:N:N) ma 1:N tra utenti (solo studenti) e progetti. L'idea iniziale era di avere una applicazione dove un progetto poteva essere fatto per più corsi, da più studenti, il che è interessante però molto complicato da gestire:  
 
     - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto):   
@@ -133,6 +134,8 @@ Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella cost
 - Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di Laravel, per essere un nome univoco viene unito a un timestamp:  
   - Si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, Laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL Server (mentre io al momento uso MySQL) dove dicono che se i file sono minori di 256KB allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
   - È un argomento interessante poiché salvare nel db porterebbe diversi pro per quanto riguarda i backup, atomicità delle operazioni etc. nei miei studi infatti ho trovato spesso opzioni che descrivono come si possano caricare file di grosse dimensioni, scontrandomi però con l'implementazione non sembra la via migliore almeno per la maggioranza dei casi e come detto non è una opzione abbracciata di base da Laravel.
+
+- Ho usato MySQL per la gestione del database.
   
 ---
 
