@@ -131,7 +131,7 @@ Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella cost
 - Lo stato del progetto è solo "attivo" o "concluso", è importante concludere i progetti così da metterli in secondo piano a quelli attivi nella interfaccia utente.  
 
 - Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di Laravel:  
-  - Si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, Laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL server dove dicono che se i file sono minori di 256K allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
+  - Si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, Laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL Server (mentre io al momento uso MySQL) dove dicono che se i file sono minori di 256K allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
 
 ---
 
