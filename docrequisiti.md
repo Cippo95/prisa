@@ -4,7 +4,7 @@
 
 - [Premessa](#section-1)
 - [Requisiti della applicazione](#section-2)
-- [Struttura iniziale della base di dati](#section-3)
+- [Struttura della base di dati](#section-3)
 - [Parliamo dell'implementazione](#section-4)
 - [Schemi architetturali](#section-5)
   
@@ -28,7 +28,7 @@ L'applicazione verrà usata dagli studenti e i docenti per la gestione dei proge
 - Gli studenti potranno gestire i loro progetti per i vari corsi.
 Potranno creare un progetto per un corso da loro seguito e concordare col docente del corso i requisiti tramite messaggi in una sezione apposita.
 
-- Raggiunto un accordo sui requisiti il progetto, lo studente implementerà il progetto e al termine potra allegare i file di progetto o condividere (sotto forma di messaggio) un link a un repository/drive remoto con i sorgenti e documentazione di progetto.  
+- Raggiunto un accordo sui requisiti il progetto, lo studente implementerà il progetto e al termine potrà allegare i file di progetto o condividere (sotto forma di messaggio) un link a un repository/drive remoto con i sorgenti e documentazione di progetto.  
 
 - I docenti potranno vedere i vari progetti legati ai corsi che insegnano e quindi interagire con essi nella definizione dei requisiti e una volta terminati, possono metterli nello stato "concluso".  
 
@@ -37,12 +37,11 @@ Essenzialmente la struttura principale è molto simile a quella di un forum dove
 ### Requisiti aggiuntivi
 
 Ho considerato necessario aggiungere un ruolo di amministratore per la creazione dei corsi, l'assegnamento di essi a dei docenti, e il controllo degli utenti.
-È necessario che gli studenti oltre i messaggi possano anche aggiungere file in allegato.
 
 ---
 
 <a name="section-3"></a>
-## STRUTTURA INIZIALE DELLA BASE DI DATI
+## STRUTTURA DELLA BASE DI DATI
 
 La base di dati ha come tabelle principali:
 
@@ -50,9 +49,9 @@ La base di dati ha come tabelle principali:
 
 - I corsi (courses): che hanno un codice identificativo, un nome e i timestamp.
 
-- I progetti (projects): che hanno un codice identificativo, un corso di appartenenza, uno studente che li ha creati, uno stato (1 se in corso e 0 se concluso) e i timestamp. 
+- I progetti (projects): che hanno un codice identificativo, un corso di appartenenza, uno studente che li ha creati, uno stato (numero intero, 1 se in corso e 0 se concluso) e i timestamp. 
 
-- Gli allegati (attachments): che hanno un id univoco, un identificativo del progetto e del utente che li ha scritti, un messaggio di testo, una stringa indicante un eventuale allegato al messaggio e i timestamp.
+- Gli allegati (attachments): che hanno un id univoco, un identificativo del progetto a cui appartengono e del utente che li ha scritti, un messaggio di testo, una stringa indicante un eventuale allegato al messaggio e i timestamp.
 
 - Ci sono inoltre altre tabelle create da Laravel per l'autenticazione e una tabella detta di "pivot" che serve alla relazione N:N che avviene tra gli utenti e i corsi (couse_user), le relazioni 1:N non necessitano di pivot table in quanto rappresentabili da un singolo attributo nella tabella lato N.
 
@@ -89,18 +88,21 @@ In queste cartelle che vi indico trovate il succo del mio lavoro:
 
 **_Questa sezione potrebbe essere particolarmente scritta male poiché ho scritto le varie parti in tempi differenti durante la progettazione, mi scuso in anticipo._**
 
-Anche se ne ho già parlato prima ci sono state diverse semplificazioni e scelte nella costruzione del database:
+Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella costruzione del database:
     - Sviluppa non è più una relazione ternaria (N:N:N) ma 1:N tra utenti (solo studenti) e progetti. L'idea iniziale era di avere una applicazione dove un progetto poteva essere fatto per più corsi, da più studenti, il che è interessante però molto complicato da gestire:
-        - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto), nella realtà abbiamo casi di progetti singoli fatti per più corsi (sarebbe quindi N:N) però non prendo in considerazione questo. E.G. Gli studenti della triennale di ingegneria informatica ed elettronica che seguono i corsi di Cento possono scegliere di fare un "mega" progetto che vale mi pare ingegneria dei sistemi web e basi di dati.
-        - Ora progetti possono avere un solo studente che li ha creati (relazione 1:N tra utenti e progetti), in realtà molto spesso i progetti vengono fatti da più persone (N:N), in questo caso un workaround sarebbe che gli studenti si mettessero d'accordo e uno facesse il rappresentante però in ogni caso non sarebbe male che tutti avessero visione del loro progetto tramite l'applicazione web.
-    - Gli allegati inizialmente entità deboli sono diventate entità forti: con Laravel non si può fare diversamente (Eloquent non supporta le chiavi composite) quindi ho in teoria una sola grande tabella per gli allegati cosa che sembra problematica dai miei studi di base per quando riguarda le prestazioni, ma dalle mie ulteriori ricerche è giusto così: nella maggioranza dei casi si implementano così le cose creando però anche degli indici per non avere problemi di prestazioni (il che rafforza il motivo per cui Eloquent non supporti questo metodo di funzionamento).
-    - Dallo schema ER si evincono certi vincoli che poi nella applicazione non si riflettono in maniera così vincolante:
+        - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto): 
+          - Nella realtà abbiamo casi di progetti singoli fatti per più corsi (sarebbe quindi N:N).  
+        - Ora i progetti possono avere un solo studente che li ha creati (relazione 1:N tra utenti e progetti):
+          - Nella realtà alcuni progetti vengono fatti da più persone (N:N).
+    - Gli allegati inizialmente modellati come entità deboli sono diventati entità forti: usando Eloquent non si può fare diversamente in quanto non supporta le chiavi composite, quindi ho in teoria una sola grande tabella per gli allegati cosa che sembra problematica lato prestazioni, da ulteriori ricerche però è giusto così, poiché semplicemente si aggiungono degli indici per non avere problemi di prestazioni il che spiega perché Eloquent non supporti le chiavi composite.
+    - Dallo schema ER si evincono vincoli che poi nella applicazione non si riflettono in teoria:
         - Posso creare un corso senza che esso abbia un insegnante e viceversa posso creare un docente senza corsi, sta all'amministratore tenere tutto in ordine.
-        - Si evince che un progetto possa esistere senza allegati, ma in realtà nella app alla creazione di un progetto bisogna scrivere il primo.
+        - Si evince poi che un progetto possa esistere senza allegati, ma per ragioni di praticità nella app alla creazione di un progetto bisogna scrivere il primo.
     - I corsi hanno un identificativo unico: l'uso di un identificativo autoincrementante è la norma per ragioni di semplicità e robustezza (inizialmente mi era stato chiesto di usare il nome di un corso come chiave primaria).
     - La differenza tra docenti e studenti è data solo dal loro ruolo, è importante unificarli per ragioni di login (stesso login per tutti, le relazioni che avevo prima tipo "segue" e "insegna" essenzialmente sono rappresentate dalla stessa relazione (N:N) con il ruolo dell'utente che definisce di quale stiamo parlando, ho anche creato il ruolo dei amministratore:
         - L'amministratore può creare i corsi, eliminare utenti, assegnare i corsi ai docenti, dare i privilegi di docente ai docenti appena iscritti al servizio (tutti i nuovi iscritti per ragioni di sicurezza hanno ruolo di studente).
     - Lo stato del progetto è solo "attivo" o "concluso", è importante concludere i progetti così da metterli in secondo piano a quelli attivi nella interfaccia utente.
+    - Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di laravel, si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL server dove dicono che se i file sono minori di 256K allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
 
 ---
 
