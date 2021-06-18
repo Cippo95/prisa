@@ -67,21 +67,36 @@ Discuterò anche di alcune differenze tra l'implementazione finale e la prima do
 
 Laravel è un framework in PHP basato sul paradigma Model View Controller.
 In queste cartelle che vi indico trovate il succo del mio lavoro:
+
     - Il Model indica il modello dei dati, cioè come essi (le entità/tabelle) siano relazionati tra di loro nel database, trovate i miei modelli sotto 'app/Models', per scriverli ho usato l'ORM Eloquent integrato in Laravel.
+    
     - Le Views sono le viste, cioè come l'applicazione rappresenta i dati all'utente, trovate le mie viste sotto 'resources/views', esse sfruttano il motore di template blade (estensione .blade.php).
+    
     - I Controller gestiscono le richieste http e interagiscono con Model e View per il funzionamento della app, sono 'la mente' della applicazione, trovate i miei controller sotto 'app/Http/Controllers'.
+    
     - È importante capire che tutto parte da richieste Http fatte attraverso le 'routes' trovate le mie route sotto 'routes/web.php'.   
     - Il database è stato definito attraverso le migrazioni, le trovate sotto 'database/migration', uso inoltre un seed (Databaseeder sotto '/database/seeders') per testare il funzionamento dell'applicazione.
+    
     - L'autenticazione è stata gestita con il pacchetto laravel/ui, ho fatto qualche modifica alle view sotto 'resources/views/auth'.
+    
     - Nei controller troverete anche dei così detti 'Gate' per l'autorizzazione, questi sono definiti sotto '/app/Providers/AuthServiceProvider.php'.
+    
     - Ho effettuato dei test delle richieste HTTP sotto 'tests/Feature/DatabaseTest' un mini test con Laravel dusk (simula interazione con browser chrome) sotto 'tests/Browser/AuthenticationTest.php'.
+    
     - Ho scritto questa stessa documentazione con il pacchetto Larecipe e trovate i documenti sotto 'resources/docs'.
+    
     - L'integrazione con SAML:
+    
         - Sfrutta il pacchetto a questo indirizzo https://github.com/aacotroneo/laravel-saml2.
+        
         - Sarebbe in parte nel file .env che non viene però copiato su git per ragioni di sicurezza, dovrete quindi compilarlo a mano voi stessi con i dati della vostra applicazione: 
+        
             - Prendete .env.example, copiatelo in .env, ed aggiungete i metadati della vostra applicazione alle variabili 'SAML_*'; 
+            
         - Il resto lo trovate in 'config/saml2/test_idp_settings.php' e 'config/saml2_settings.php' nel primo vedrete i dati del mio IDP:
+        
             - Io ho testato il funzionamento di SAML con OneLogin che offre un servizio molto base per il testing, in ogni caso vi servono i miei dati (che sarebbero in .env) per accedere (oltre che sapere le mie credenziali).  
+            
         - Quindi per integrare davvero la app con i servizi dell'università (quindi usare l'SSO, Single Sign On) bisognerebbe contattare gli amministratori dell'IDP (Identity Provider) dell'università per scambiare dei dati di configurazione. Ho usato il pacchetto piuttosto che seguire la documentazione di SAML poiché avevo difficoltà nel seguirla (se non fosse così difficile probabilmente non ci sarebbe questo pacchetto).
 
 ### Il database
