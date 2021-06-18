@@ -58,7 +58,7 @@ La base di dati ha come tabelle principali:
 ---
 
 <a name="section-4"></a>
-##PARLIAMO DELL'IMPLEMENTAZIONE
+## PARLIAMO DELL'IMPLEMENTAZIONE
 
 Questa sezione è abbastanza corposa, l'ho scritta abbastanza a ruota libera quindi potrebbe non essere facilmente leggibile.
 Discuterò anche di alcune differenze tra l'implementazione finale e la prima documentazione.
