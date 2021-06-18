@@ -4,7 +4,7 @@ Il mio progetto di ingegneria del software avanzata consiste
 in un software gestionale per i progetti universitari.
 
 L'applicazione la trovate qui: https://github.com/Cippo95/prisa-laravel  
-L'applicazione contiene la documentazione sotto la route '/docs', per ragioni di semplicità riporto anche qui gli stessi documenti della documentazione per la presentazione del progetto, trovate quelli vecchi nel branch 'develop'.
+L'applicazione contiene la documentazione sotto la route '/docs', per ragioni di semplicità riporto anche qui gli stessi documenti per la presentazione del progetto, trovate la vecchia documentazione nel branch 'develop'.
 
 Consiglio di leggere la documentazione in questo ordine:
 
