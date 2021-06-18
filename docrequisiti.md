@@ -106,25 +106,32 @@ Vi indico le cartelle dove trovate il succo del mio lavoro:
 
 Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella costruzione del database:
 - Sviluppa non è più una relazione ternaria (N:N:N) ma 1:N tra utenti (solo studenti) e progetti. L'idea iniziale era di avere una applicazione dove un progetto poteva essere fatto per più corsi, da più studenti, il che è interessante però molto complicato da gestire:  
-    - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto): 
-      - Nella realtà abbiamo casi di progetti singoli fatti per più corsi (sarebbe quindi N:N).  
-    - Ora i progetti possono avere un solo studente che li ha creati (relazione 1:N tra utenti e progetti):
+
+    - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto):   
+      
+      - Nella realtà abbiamo casi di progetti singoli fatti per più corsi (sarebbe quindi N:N).   
+    - Ora i progetti possono avere un solo studente che li ha creati (relazione 1:N tra utenti e progetti):  
+      
       - Nella realtà alcuni progetti vengono fatti da più persone (N:N).  
       
 - Gli allegati inizialmente modellati come entità deboli sono diventati entità forti: usando Eloquent non si può fare diversamente in quanto non supporta le chiavi composite, quindi ho in teoria una sola grande tabella per gli allegati cosa che sembra problematica lato prestazioni, da ulteriori ricerche però è giusto così, poiché semplicemente si aggiungono degli indici per non avere problemi di prestazioni il che spiega perché Eloquent non supporti le chiavi composite.  
 
-- Dallo schema ER si evincono vincoli che poi nella applicazione non si riflettono in teoria:
-    - Posso creare un corso senza che esso abbia un insegnante e viceversa posso creare un docente senza corsi, sta all'amministratore tenere tutto in ordine.
-    - Si evince poi che un progetto possa esistere senza allegati, ma per ragioni di praticità nella app alla creazione di un progetto bisogna scrivere il primo.
+- Dallo schema ER si evincono vincoli che poi nella applicazione non si riflettono in teoria:  
+    
+    - Posso creare un corso senza che esso abbia un insegnante e viceversa posso creare un docente senza corsi, sta all'amministratore tenere tutto in ordine.  
+    
+    - Si evince poi che un progetto possa esistere senza allegati, ma per ragioni di praticità nella app alla creazione di un progetto bisogna scrivere il primo. 
     
 - I corsi hanno un identificativo unico: l'uso di un identificativo autoincrementante è la norma per ragioni di semplicità e robustezza (inizialmente mi era stato chiesto di usare il nome di un corso come chiave primaria).  
 
-- La differenza tra docenti e studenti è data solo dal loro ruolo, è importante unificarli per ragioni di login (stesso login per tutti, le relazioni che avevo prima tipo "segue" e "insegna" essenzialmente sono rappresentate dalla stessa relazione (N:N) con il ruolo dell'utente che definisce di quale stiamo parlando, ho anche creato il ruolo dei amministratore:
+- La differenza tra docenti e studenti è data solo dal loro ruolo, è importante unificarli per ragioni di login (stesso login per tutti, le relazioni che avevo prima tipo "segue" e "insegna" essenzialmente sono rappresentate dalla stessa relazione (N:N) con il ruolo dell'utente che definisce di quale stiamo parlando, ho anche creato il ruolo dei amministratore:  
+    
     - L'amministratore può creare i corsi, eliminare utenti, assegnare i corsi ai docenti, dare i privilegi di docente ai docenti appena iscritti al servizio (tutti i nuovi iscritti per ragioni di sicurezza hanno ruolo di studente).   
 
 - Lo stato del progetto è solo "attivo" o "concluso", è importante concludere i progetti così da metterli in secondo piano a quelli attivi nella interfaccia utente.  
 
-- Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di laravel, si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL server dove dicono che se i file sono minori di 256K allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
+- Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di Laravel:  
+  - Si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, Laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL server dove dicono che se i file sono minori di 256K allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
 
 ---
 
