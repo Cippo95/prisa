@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-18T09:52:25.137Z" agent="5.0 (X11)" etag="0L05f7icH1II6zIYhORC" version="14.8.0" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-06-18T09:52:46.905Z" agent="5.0 (X11)" etag="KVOG3xsEHKplLuxtpqWU" version="14.8.0" type="github" pages="5">
   <diagram name="SCHEMA_EER" id="66IZYz81pUA2FuGHuRgb">
     <mxGraphModel dx="1422" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -891,6 +891,9 @@
               <mxPoint x="340" y="460" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="L0OM2TFjlgKWpGi0OeKI-0" value="VECCHIO SCHEMA ER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=26;" vertex="1" parent="zwl0saxS9elbdI8-pPL1-1">
+          <mxGeometry x="41.25" y="80" width="290" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
