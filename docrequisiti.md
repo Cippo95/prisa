@@ -43,6 +43,8 @@ Ho considerato necessario aggiungere un ruolo di amministratore per la creazione
 <a name="section-3"></a>
 ## STRUTTURA DELLA BASE DI DATI
 
+### Le tabelle principali
+
 La base di dati ha come tabelle principali:
 
 - Gli utenti (users): che hanno un codice identificativo (tipo matricola), un nome (nome e cognome), un ruolo (indicato da un numero intero 2 per gli studenti, 1 per i docenti, 0 per gli amministratori), una email e una password (per ovvie ragioni di login/autenticazione) e altri campi inseriti di default da Laravel ad esempio il timestamp (di creazione e modifica), un remember_token (per ricordarsi le sessioni utente) ed email_verified_at per la verifica della email alla registrazione (cosa non implementata).
@@ -55,15 +57,50 @@ La base di dati ha come tabelle principali:
 
 - Ci sono inoltre altre tabelle create da Laravel per l'autenticazione e una tabella detta di "pivot" che serve alla relazione N:N che avviene tra gli utenti e i corsi (couse_user), le relazioni 1:N non necessitano di pivot table in quanto rappresentabili da un singolo attributo nella tabella lato N.
 
+### Il database: considerazioni e la sua evoluzione dai primi modelli
+
+**_Questa sezione potrebbe essere difficile da comprendere, ho scritto le varie parti in tempi differenti durante la progettazione, di fatto è un misto tra scelte di modellazione del database e scelte tecnologiche dettate da come funziona Laravel, mi scuso in anticipo della confusione._**
+
+Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella costruzione del database, trovate un link agli schemi in fondo a questo documento:  
+
+- Sviluppa non è più una relazione ternaria (N:N:N) ma 1:N tra utenti (solo studenti) e progetti. L'idea iniziale era di avere una applicazione dove un progetto poteva essere fatto per più corsi, da più studenti, il che è interessante però molto complicato da gestire:  
+
+    - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto):   
+      
+      - Nella realtà abbiamo casi di progetti singoli fatti per più corsi (sarebbe quindi N:N).   
+      
+    - Ora i progetti possono avere un solo studente che li ha creati (relazione 1:N tra utenti e progetti):  
+      
+      - Nella realtà alcuni progetti vengono fatti da più persone (N:N).  
+      
+- Gli allegati inizialmente  entità deboli sono diventati entità forti: usando Eloquent non si può fare diversamente in quanto non supporta le chiavi composite, quindi ho in teoria una sola grande tabella per gli allegati cosa che sembra problematica lato prestazioni, da ulteriori ricerche però è giusto così, poiché semplicemente si aggiungono degli indici per non avere problemi di prestazioni (il che spiega la limitazione di Eloquent).  
+
+- Nello schema ER si vedono vincoli che poi nella applicazione non si riflettono:  
+    
+    - Posso creare un corso senza che esso abbia un insegnante e viceversa posso creare un docente senza corsi, sta all'amministratore tenere tutto in ordine.  
+    
+    - Si evince poi che un progetto possa esistere senza allegati, ma per ragioni di praticità nella app alla creazione di un progetto bisogna scrivere il primo. 
+    
+- I corsi hanno un identificativo unico: l'uso di un identificativo autoincrementante è la norma per ragioni di semplicità e robustezza (inizialmente mi era stato chiesto di usare il nome di un corso come chiave primaria).  
+
+- La differenza tra docenti e studenti è data solo dal loro ruolo, è importante unificarli per ragioni di login (stesso login per tutti), le relazioni che avevo prima tipo "segue" e "insegna" essenzialmente sono rappresentate dalla stessa relazione (N:N) con il ruolo dell'utente che definisce di quale stiamo parlando, ho anche creato il ruolo dei amministratore:  
+    
+    - L'amministratore può creare i corsi, eliminare utenti, assegnare i corsi ai docenti, dare i privilegi di docente ai docenti appena iscritti al servizio (tutti i nuovi iscritti per ragioni di sicurezza hanno ruolo di studente).   
+
+- Lo stato del progetto è solo "attivo" o "concluso", è importante concludere i progetti così da metterli in secondo piano a quelli attivi nella interfaccia utente.  
+
+- Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di Laravel, per essere un nome univoco viene unito a un timestamp:  
+  - Si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, Laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL Server (mentre io al momento uso MySQL) dove dicono che se i file sono minori di 256KB allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
+  - È un argomento interessante poiché salvare nel db porterebbe diversi pro per quanto riguarda i backup, atomicità delle operazioni etc. nei miei studi infatti ho trovato spesso opzioni che descrivono come si possano caricare file di grosse dimensioni, scontrandomi però con l'implementazione non sembra la via migliore almeno per la maggioranza dei casi e come detto non è una opzione abbracciata di base da Laravel.
+
+- Come accennato ho usato MySQL per la gestione del database.
+
 ---
 
 <a name="section-4"></a>
 ## PARLIAMO DELL'IMPLEMENTAZIONE
 
-Questa sezione è abbastanza corposa, l'ho scritta abbastanza a ruota libera quindi potrebbe non essere facilmente leggibile.  
-Discuterò anche di alcune differenze tra l'implementazione finale e la prima documentazione.  
-
-### Laravel
+### Implementazione in Laravel
 
 Laravel è un framework in PHP basato sul paradigma Model View Controller.  
 Vi indico le cartelle dove trovate il succo del mio lavoro:  
@@ -99,43 +136,6 @@ Vi indico le cartelle dove trovate il succo del mio lavoro:
         - Io ho testato il funzionamento di SAML con OneLogin che offre un servizio molto base per il testing, in ogni caso vi servono i miei dati (che sarebbero in .env) per accedere (oltre che sapere le mie credenziali).  
 
     - Quindi per integrare davvero la app con i servizi dell'università (quindi usare l'SSO, Single Sign On) bisognerebbe contattare gli amministratori dell'IDP (Identity Provider) dell'università per scambiare dei dati di configurazione. Ho usato il pacchetto piuttosto che seguire la documentazione di SAML poiché avevo difficoltà nel seguirla (se non fosse così difficile probabilmente non ci sarebbe questo pacchetto).
-
-### Il database, la sua evoluzione e scelte tecnologiche
-
-**_Questa sezione potrebbe essere difficile da comprendere, ho scritto le varie parti in tempi differenti durante la progettazione, di fatto è un misto tra scelte di modellazione del database e scelte tecnologiche dettate da come funziona Laravel, mi scuso in anticipo della confusione._**
-
-Ci sono state diverse semplificazioni dai primi schemi e nuove scelte nella costruzione del database:  
-
-- Sviluppa non è più una relazione ternaria (N:N:N) ma 1:N tra utenti (solo studenti) e progetti. L'idea iniziale era di avere una applicazione dove un progetto poteva essere fatto per più corsi, da più studenti, il che è interessante però molto complicato da gestire:  
-
-    - Ora lo studente può fare un progetto per un solo corso alla volta (relazione 1:N tra corso e progetto):   
-      
-      - Nella realtà abbiamo casi di progetti singoli fatti per più corsi (sarebbe quindi N:N).   
-    - Ora i progetti possono avere un solo studente che li ha creati (relazione 1:N tra utenti e progetti):  
-      
-      - Nella realtà alcuni progetti vengono fatti da più persone (N:N).  
-      
-- Gli allegati inizialmente modellati come entità deboli sono diventati entità forti: usando Eloquent non si può fare diversamente in quanto non supporta le chiavi composite, quindi ho in teoria una sola grande tabella per gli allegati cosa che sembra problematica lato prestazioni, da ulteriori ricerche però è giusto così, poiché semplicemente si aggiungono degli indici per non avere problemi di prestazioni il che spiega perché Eloquent non supporti le chiavi composite.  
-
-- Dallo schema ER si evincono vincoli che poi nella applicazione non si riflettono in teoria:  
-    
-    - Posso creare un corso senza che esso abbia un insegnante e viceversa posso creare un docente senza corsi, sta all'amministratore tenere tutto in ordine.  
-    
-    - Si evince poi che un progetto possa esistere senza allegati, ma per ragioni di praticità nella app alla creazione di un progetto bisogna scrivere il primo. 
-    
-- I corsi hanno un identificativo unico: l'uso di un identificativo autoincrementante è la norma per ragioni di semplicità e robustezza (inizialmente mi era stato chiesto di usare il nome di un corso come chiave primaria).  
-
-- La differenza tra docenti e studenti è data solo dal loro ruolo, è importante unificarli per ragioni di login (stesso login per tutti, le relazioni che avevo prima tipo "segue" e "insegna" essenzialmente sono rappresentate dalla stessa relazione (N:N) con il ruolo dell'utente che definisce di quale stiamo parlando, ho anche creato il ruolo dei amministratore:  
-    
-    - L'amministratore può creare i corsi, eliminare utenti, assegnare i corsi ai docenti, dare i privilegi di docente ai docenti appena iscritti al servizio (tutti i nuovi iscritti per ragioni di sicurezza hanno ruolo di studente).   
-
-- Lo stato del progetto è solo "attivo" o "concluso", è importante concludere i progetti così da metterli in secondo piano a quelli attivi nella interfaccia utente.  
-
-- Gli allegati binari sono memorizzati con il nome di un file negli allegati nel database, questo identifica un file nella cartella 'storage/app/attachments' di Laravel, per essere un nome univoco viene unito a un timestamp:  
-  - Si usa questo metodo piuttosto che salvare i file direttamente nel database per questioni di performance, Laravel abbraccia questa filosofia e non documenta un metodo per salvare direttamente nel database, c'è anche un documento interessante della Microsoft fatto però riguardo SQL Server (mentre io al momento uso MySQL) dove dicono che se i file sono minori di 256KB allora si possono mettere sul database altrimenti l'approccio del path/nome del file è preferibile, potete trovare il paper qui: https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf
-  - È un argomento interessante poiché salvare nel db porterebbe diversi pro per quanto riguarda i backup, atomicità delle operazioni etc. nei miei studi infatti ho trovato spesso opzioni che descrivono come si possano caricare file di grosse dimensioni, scontrandomi però con l'implementazione non sembra la via migliore almeno per la maggioranza dei casi e come detto non è una opzione abbracciata di base da Laravel.
-
-- Ho usato MySQL per la gestione del database.
   
 ---
 
