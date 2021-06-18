@@ -3,4 +3,5 @@
 Il mio progetto di ingegneria del software avanzata consiste
 in un software gestionale per i progetti universitari.
 
-Uso questo repository per la documentazione da aggiungere...
+L'applicazione la trovate qui: https://github.com/Cippo95/prisa-laravel
+L'applicazione contiene la documentazione sotto la route '/docs', per ragioni di semplicità riporto anche qui gli stessi documenti.
