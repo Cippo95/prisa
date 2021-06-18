@@ -19,7 +19,7 @@ Ho suddiviso i documenti in due versioni, la prima è relativa agli schemi che a
 Credo che sia interessante vedere come siano cambiate le cose poiché (soprattutto parlando del database) ho scoperto diverse divergenze sulla teoria che avevo studiato in precedenza.
 
 <a name="section-3"></a>
-###Breve panoramica e considerazioni
+### Breve panoramica e considerazioni
 - Questa applicazione è effettivamente un prototipo, non ho implementato funzionalità particolarmente complesse e già così si è rivelato essere un lavoro abbastanza lungo.
 - Cerco di essere aderente alle convenzioni di Laravel per quanto riguarda il naming. 
 Info qui: https://webdevetc.com/blog/laravel-naming-conventions/
