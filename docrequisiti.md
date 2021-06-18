@@ -2,7 +2,7 @@
 
 ---
 
-- [Caso d'uso tipico](#section-1)
+- [Premessa](#section-1)
 - [Requisiti iniziali della applicazione](#section-2)
 - [Struttura iniziale della base di dati](#section-3)
 - [Parliamo dell'implementazione](#section-4)
